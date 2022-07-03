@@ -11,7 +11,7 @@ import Header from "./components/header";
 export default function JobPage() {  
     // ** useState and useRecoilState
     const [currentStep, setCurrentStep] = useState(0);
-    const [setRecords] = useRecoilState(registerState);
+    const [records, setRecords] = useRecoilState(registerState);
     
     // ** useNavigation
     const navigate = useNavigate();
@@ -164,7 +164,7 @@ const StepTwo = (props) => {
                 <Form>
                     <div className="form-group mb-3">
                         <label className="mb-1">Job History</label>
-                        <input
+                        <textarea
                             type="text"
                             name="jobHistory"
                             className={classnames('form-control', { 'is-invalid': errors.jobHistory && touched.jobHistory && true })}
